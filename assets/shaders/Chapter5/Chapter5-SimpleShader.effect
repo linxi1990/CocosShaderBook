@@ -25,6 +25,7 @@ CCProgram vs %{
     vec3 normal = a_normal;
     v_pos = cc_matProj * (cc_matView * cc_matWorld) * vertex;
     v_color = normal * 0.5 + vec3(0.5, 0.5, 0.5);
+    // v_color = normal;
     return v_pos;
   }
 }%

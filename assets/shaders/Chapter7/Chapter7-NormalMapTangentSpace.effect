@@ -52,20 +52,32 @@ CCProgram vs %{
     v_uv.zw = TRANSFORM_TEX(a_texCoord, _BumpMap_ST);
 
     //法线变换到世界空间
-    vec3 worldNormal =  CCObjectToWorldNormal(a_normal);
+    vec3 worldNormal = CCObjectToWorldNormal(a_normal);
     //切线变换到世界空间
     vec3 worldTangent = CCObjectToWorldDir(a_tangent.xyz);
     //计算副法线
     vec3 worldBinormal = cross(worldNormal, worldTangent) * a_tangent.w;
-    //计算世界空间到切线空间矩阵
+
+    vec4 worldLightPos = vec4(-cc_mainLitDir.x, -cc_mainLitDir.y, -cc_mainLitDir.z, cc_mainLitDir.w);
+
+
+    // //切线空间矩阵 - 》 世界
     mat3 rotation = mat3(worldTangent.x, worldBinormal.x, worldNormal.x,
 							    worldTangent.y, worldBinormal.y, worldNormal.y,
 			 				    worldTangent.z, worldBinormal.z, worldNormal.z);
 
-    //将灯光和视线方向从局部空间变换到切线空间
-    vec4 worldLightPos = vec4(-cc_mainLitDir.x, -cc_mainLitDir.y, -cc_mainLitDir.z, cc_mainLitDir.w);
-    v_lightDir = rotation * ObjSpaceLightDir(vertex, worldLightPos);
-    v_viewDir = rotation * ObjSpaceViewDir(vertex);
+    // // ///将灯光和视线方向从局部空间变换到切线空间
+    // v_lightDir = rotation * ObjSpaceLightDir(vertex, worldLightPos);
+    // v_viewDir = rotation * ObjSpaceViewDir(vertex);
+
+
+    //世界 -》 切线
+    // mat3 rotation = mat3(worldTangent.x, worldTangent.y, worldTangent.z,
+		// 					    worldBinormal.x, worldBinormal.y, worldBinormal.z,
+		// 	 				    worldNormal.x, worldNormal.y, worldNormal.z);
+    vec3 worldPos = (cc_matWorld * vertex).xyz;
+    v_lightDir = rotation * CCWorldSpaceLightDir(worldLightPos, worldPos);
+    v_viewDir = rotation * CCWorldSpaceViewDir(worldPos);
 
     return v_pos;
   }

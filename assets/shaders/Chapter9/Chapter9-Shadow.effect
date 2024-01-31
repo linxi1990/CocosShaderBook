@@ -297,7 +297,7 @@ CCProgram shadow-caster-fs %{
 
   vec4 frag () {
     vec4 depthColor;
-    //把投影坐标中的z变换到NDC(Normalized Device Coordinate)坐标中，即z/w，范围[0, 1]
+    //把投影坐标中的z变换到NDC(Normalized Device Coordinate)坐标中，即z/w，范围[0, 1] ndc => uv（01）
     highp float clipDepth = v_clip_depth.x / v_clip_depth.y * 0.5 + 0.5;
     //阴影图采用线性深度
     #if CC_SHADOWMAP_USE_LINEAR_DEPTH

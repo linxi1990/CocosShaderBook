@@ -14,7 +14,9 @@
   ],
   "_states": [
     {
-      "rasterizerState": {},
+      "rasterizerState": {
+        "cullMode": 0
+      },
       "depthStencilState": {},
       "blendState": {
         "targets": [
@@ -31,8 +33,8 @@
       },
       "_TilingAndOffset": {
         "__type__": "cc.Vec4",
-        "x": 3,
-        "y": 3,
+        "x": 2,
+        "y": 2,
         "z": 0,
         "w": 0
       }

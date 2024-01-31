@@ -33,7 +33,7 @@ CCProgram vs %{
 
   vec4 vert () {
     //顶点坐标变换到投影空间
-    vec4 vertex = vec4(a_position, 1.0);
+    vec4 vertex = vec4(a_position, 1.0); 
     v_pos = CCObjectToClipPos(vertex);
    
     //法线变换到世界空间

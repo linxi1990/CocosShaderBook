@@ -24,6 +24,26 @@
     }
   ],
   "_props": [
-    {}
+    {
+      "_BumpMap": {
+        "__uuid__": "a6a10309-0cce-49d9-b196-b21189a458a2@6c48a",
+        "__expectedType__": "cc.Texture2D"
+      },
+      "_RefractAmount": 0.7,
+      "_RefractRatio": 0.9,
+      "_ReflectAmount": 0.9,
+      "_Cubemap": {
+        "__uuid__": "077af038-c078-4e5e-b2cb-4c5d818e1a64",
+        "__expectedType__": "cc.TextureCube"
+      },
+      "_screenTex": {
+        "__uuid__": "cbea83b5-5126-4798-a171-8d1607f20eb2",
+        "__expectedType__": "cc.RenderTexture"
+      },
+      "_noiseTex": {
+        "__uuid__": "e0938037-e46c-4f56-9c36-98905f6d9765@6c48a",
+        "__expectedType__": "cc.Texture2D"
+      }
+    }
   ]
 }

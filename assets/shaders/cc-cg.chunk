@@ -16,7 +16,8 @@ vec3 CCObjectToWorldNormal(vec3 norm){
 }
 
 vec3 CCObjectToWorldDir(vec3 dir){
-  return normalize(mat3(cc_matWorld) * dir);
+  // return normalize(mat3(cc_matWorld) * dir);
+  return normalize(mat3(cc_matWorldIT) * dir);
 }
 
 vec3 CCWorldSpaceLightDir(vec4 worldLightPos, vec3 worldPos){

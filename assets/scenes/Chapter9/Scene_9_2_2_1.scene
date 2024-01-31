@@ -91,7 +91,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 1,
-      "z": 10.000000000000002
+      "z": 20.547
     },
     "_lrot": {
       "__type__": "cc.Quat",
@@ -431,7 +431,7 @@
       "__id__": 1
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 14
@@ -632,6 +632,9 @@
     "lightProbeInfo": {
       "__id__": 26
     },
+    "postSettings": {
+      "__id__": 27
+    },
     "bakedWithStationaryMainLight": false,
     "bakedWithHighpLightmap": false
   },
@@ -694,6 +697,7 @@
       "z": 0
     },
     "_distance": 0,
+    "_planeBias": 1,
     "_shadowColor": {
       "__type__": "cc.Color",
       "r": 76,
@@ -785,5 +789,9 @@
     "_showConvex": false,
     "_data": null,
     "_lightProbeSphereVolume": 1
+  },
+  {
+    "__type__": "cc.PostSettingsInfo",
+    "_toneMappingType": 0
   }
 ]

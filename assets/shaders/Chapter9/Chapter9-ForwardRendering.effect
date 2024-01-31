@@ -3,7 +3,7 @@
 CCEffect %{
   techniques:
   - name: opaque
-    passes:
+    passes: 
     #计算主光源（一般是距离最近的平行光）和环境光
     - vert: vs-main:vert
       frag: fs-main:frag

@@ -36,7 +36,7 @@
         "__uuid__": "6b58e39d-a165-47d5-8178-3aecd5cc5e73@3c318",
         "__expectedType__": "cc.Texture2D"
       },
-      "_BumpScale": -0.8,
+      "_BumpScale": 2,
       "_Gloss": 8
     }
   ]

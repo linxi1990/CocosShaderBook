@@ -14,7 +14,17 @@ CCEffect %{
         _BumpMap_ST:   { value: [1, 1, 0, 0] }
         _Distortion:            { value: 10.0, editor: { slide: true, range: [0.0, 100.0], step: 1, type: float } }
         _RefractAmount:            { value: 1.0, editor: { slide: true, range: [0.0, 1.0], step: 0.1, type: float } }
+        _RefractRatio:            { value: 0.8, editor: { slide: true, range: [0.1, 1.0], step: 0.1, type: float } }
+        _RefractColor:      { value: [1, 1, 1, 1], editor: { type: color } }
+
+        _Color:      { value: [1, 1, 1, 1], editor: { type: color } }
+        _ReflectColor:      { value: [1, 1, 1, 1], editor: { type: color } }
+        _ReflectAmount:            { value: 0.8, editor: { slide: true, range: [0.0, 1.0], step: 0.1, type: float } }
         _Cubemap:    { value: grey }
+
+        _screenTex:    { value: white }
+        _noiseTex:    { value: white }
+
 }%
 
 
@@ -28,16 +38,25 @@ CCProgram vs %{
   in vec4 a_tangent;
   in vec2 a_texCoord;
 
+  out vec4 v_screenPos;
   out vec4 v_pos;
   out vec4 v_uv;
   out vec4 v_scrPos;
   out vec4 v_TtoW0;
   out vec4 v_TtoW1;
   out vec4 v_TtoW2;
+  out vec3 v_worldViewDir;
+  out vec3 v_worldPos;
+  out vec3 v_worldRefl;
+  out vec3 v_worldNormal;
+
+  out vec3 v_worldRefr;
+
 
   uniform ConstantV {
     vec4 _MainTex_ST;
     vec4 _BumpMap_ST;
+    float _RefractRatio;
   };
 
   vec4 vert () {
@@ -54,16 +73,29 @@ CCProgram vs %{
     //顶点变换到世界坐标
     vec4 worldPos = (cc_matWorld * vertex);
     //法线变换到世界空间
-    vec3 worldNormal =  CCObjectToWorldNormal(a_normal);
+    vec3 v_worldNormal =  CCObjectToWorldNormal(a_normal);
     //切线变换到世界空间
     vec3 worldTangent = CCObjectToWorldDir(a_tangent.xyz);
     //计算副法线
-    vec3 worldBinormal = cross(worldNormal, worldTangent) * a_tangent.w;
+    vec3 worldBinormal = cross(v_worldNormal, worldTangent) * a_tangent.w;
     
-    v_TtoW0 = vec4(worldTangent.x, worldBinormal.x, worldNormal.x, worldPos.x);  
-    v_TtoW1 = vec4(worldTangent.y, worldBinormal.y, worldNormal.y, worldPos.y);  
-    v_TtoW2 = vec4(worldTangent.z, worldBinormal.z, worldNormal.z, worldPos.z);  
+    v_TtoW0 = vec4(worldTangent.x, worldBinormal.x, v_worldNormal.x, worldPos.x);  
+    v_TtoW1 = vec4(worldTangent.y, worldBinormal.y, v_worldNormal.y, worldPos.y);  
+    v_TtoW2 = vec4(worldTangent.z, worldBinormal.z, v_worldNormal.z, worldPos.z);  
 				
+    //顶点变换到世界坐标
+    v_worldPos = (cc_matWorld * vertex).xyz;
+
+    //计算顶点->相机的方向
+    v_worldViewDir = normalize(CCWorldSpaceViewDir(v_worldPos));
+
+    //计算逆向光路（反射），注意v_worldViewDir和v_worldNormal必须是归一化的
+    v_worldRefl = reflect(-v_worldViewDir, v_worldNormal);
+    //计算斯涅尔折射
+    v_worldRefr = refract(-normalize(v_worldViewDir), normalize(v_worldNormal), _RefractRatio);
+
+    v_screenPos = CCObjectToClipPos(vertex);
+
     return v_pos;
   }
 }%
@@ -74,27 +106,99 @@ CCProgram fs %{
 
   #include <legacy/output>
   #include <builtin/uniforms/cc-global>
+  #include <common/texture/texture-lod>
+  #include <builtin/uniforms/cc-environment>
   #include <../cc-cg>
 
+  in vec4 v_screenPos;
   in vec4 v_pos;
   in vec4 v_uv;
   in vec4 v_TtoW0;
   in vec4 v_TtoW1;
   in vec4 v_TtoW2;
+  in vec3 v_worldPos;
+  in vec3 v_worldViewDir;
+  in vec3 v_worldRefl;
+  in vec3 v_worldNormal;
+  in vec3 v_worldRefr;
 
   uniform ConstantF {
     float _BumpScale;
     float _Distortion;
     float _RefractAmount;
+    float _ReflectAmount;
+    vec4 _Color;
+    vec4 _ReflectColor;
+    vec4 _RefractColor;
   };
+
   uniform sampler2D _MainTex;
   uniform sampler2D _BumpMap;
   uniform sampler2D _Cubemap;
+  uniform sampler2D _screenTex;
+  uniform sampler2D _noiseTex;
 
   vec4 frag () {
     vec3 worldPos = vec3(v_TtoW0.w, v_TtoW1.w, v_TtoW2.w);
 		vec3 worldViewDir = normalize(CCWorldSpaceViewDir(worldPos.xyz));
 				
-    return CCFragOutput(vec4(1.0));
+    // return CCFragOutput(vec4(1.0));
+
+    vec3 bump = texture(_BumpMap, v_uv.zw).xyz - vec3(0.5);
+
+    vec2 screenUV = v_screenPos.xy / v_screenPos.w * 0.5 + 0.5;
+
+    screenUV = screenUV + bump.xy * 0.08;
+
+    //获取世界空间下的法线
+    vec3 worldNormal =  normalize(v_worldNormal);
+    
+    //获取世界空间下的平行光方向
+    vec4 worldSpaceLightPos0 = vec4(-cc_mainLitDir.xyz, cc_mainLitDir.w); 
+    vec3 worldLightDir = normalize(CCWorldSpaceLightDir(worldSpaceLightPos0, v_worldPos));	
+    
+    /**计算折射*/
+    vec3 refractColor = texture(_screenTex, screenUV).xyz;
+
+    /**法线贴图法线变换到世界空间下*/
+    // mat3 rotation = mat3(v_TtoW0.x, v_TtoW1.x, v_TtoW2.x,
+    //           v_TtoW0.y, v_TtoW1.y, v_TtoW2.y,
+    //           v_TtoW0.z, v_TtoW1.z, v_TtoW2.z);
+    bump = normalize(vec3(dot(v_TtoW0.xyz, bump), dot(v_TtoW1.xyz, bump), dot(v_TtoW2.xyz, bump)));
+    //计算表面反射方向
+    vec3 reflectDir = reflect(-worldViewDir, v_worldNormal);
+    vec3 reflectColor = fragTextureLod(cc_environment, v_worldRefl, 1.0).rgb * _ReflectColor.rgb;
+    vec3 color = reflectColor * (1.0 - _RefractAmount) + refractColor * _RefractAmount;
+
+    // //获取环境光
+    // vec3 ambient = cc_ambientSky.xyz;
+    
+    // //计算漫反射
+    // vec3 diffuse = cc_mainLitColor.rgb * _Color.rgb * max(0.0, dot(worldNormal, worldLightDir));
+    
+    // //从场景的环境贴图中采样，fragTextureLod是cocos自带的cubemap采样函数，用来处理不同版本opengl的兼容性问题。
+    // vec3 reflection = fragTextureLod(cc_environment, v_worldRefl, 1.0).rgb * _ReflectColor.rgb;
+    // //从材质设定的_Cubemap采样，和上面的二选一
+    // //vec3 reflection = fragTextureLod(_Cubemap, v_worldRefl, 1.0).rgb * _ReflectColor.rgb;
+    
+    // //折射
+    // vec3 refraction = fragTextureLod(cc_environment, v_worldRefr, 1.0).rgb * _RefractColor.rgb;
+
+    // //cocos的环境贴图采用srgb编码，需要转成线性编码输出到屏幕
+    // reflection = SRGBToLinear(reflection);
+
+    // refraction = SRGBToLinear(refraction);
+
+    // //设定光线衰减，平行光不衰减
+    // float atten = 1.0;
+
+    // //采样屏幕纹理
+    // vec4 distortColor = texture(_screenTex, screenUV);
+
+    // //计算最终颜色值，doLerp是简单的线性插值，通过编辑器中的Reflect Amount拉杆调整反射程度更偏向diffuse还是reflection
+    // // vec3 color = ambient + doLerp(diffuse, refraction, _ReflectAmount) * atten;
+    // vec3 color = reflection * (1.0 - _RefractAmount) + distortColor.rgb * _RefractAmount;
+    return CCFragOutput(vec4(color, 1.0)); 
+    // return distortColor;
   }
 }%

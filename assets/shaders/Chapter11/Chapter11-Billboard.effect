@@ -56,7 +56,7 @@ CCProgram vs %{
     //然后在局部空间中从(0,1,0)或(0,0,1)中挑一条，通过叉积计算即可。
     vec3 normalDir = viewer - center;
 
-    normalDir.y =normalDir.y * _VerticalBillboarding;
+    normalDir.y = normalDir.y * _VerticalBillboarding;
     normalDir = normalize(normalDir);
     
     vec3 upDir = abs(normalDir.y) > 0.999 ? vec3(0, 0, 1) : vec3(0, 1, 0);
@@ -64,8 +64,16 @@ CCProgram vs %{
     upDir = normalize(cross(normalDir, rightDir));
     
     vec3 centerOffs = vertex.xyz - center;
-    vec3 localPos = center + rightDir * centerOffs.x + upDir * centerOffs.y + normalDir * centerOffs.z;
-    
+    // mat3 rotation = mat3(rightDir.x, upDir.x, normalDir.x,
+    //                       rightDir.y, upDir.y, normalDir.y,
+    //                       rightDir.z, upDir.z, normalDir.z);
+
+    mat3 rotation = mat3(rightDir.x, rightDir.y, rightDir.z,
+                          upDir.x, upDir.y, upDir.z,
+                          normalDir.x, normalDir.y, normalDir.z);
+
+    //vec3 localPos = center + rightDir * centerOffs.x + upDir * centerOffs.y + normalDir * centerOffs.z;
+    vec3 localPos = rotation * vertex.xyz;
     //顶点坐标变换到投影空间
     v_pos = CCObjectToClipPos(vec4(localPos, 1));
 
