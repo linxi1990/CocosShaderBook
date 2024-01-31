@@ -26,8 +26,8 @@
   "_props": [
     {
       "_Brightness": 1.2,
-      "_Saturation": 1.2,
-      "_Contrast": 1.2
+      "_Saturation": 0.4,
+      "_Contrast": 1.6
     }
   ]
 }
