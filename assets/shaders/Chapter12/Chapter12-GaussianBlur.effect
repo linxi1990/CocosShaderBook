@@ -76,19 +76,19 @@ CCProgram fs %{
 
     //高斯像素混合
     vec3 sum = texture(inputTexture, v_uv[0]).rgb * weight[0];
-    //垂直混合
+    // //垂直混合 
     for (int it = 1; it < 3; it++) {
       sum += texture(inputTexture, v_uv[it*2-1]).rgb * weight[it];
       sum += texture(inputTexture, v_uv[it*2]).rgb * weight[it];
     }
-    //水平混合
-    for (int it = 3; it < 5; it++) {
-      sum += texture(inputTexture, v_uv[it*2-1]).rgb * weight[it];
-      sum += texture(inputTexture, v_uv[it*2]).rgb * weight[it];
+    // //水平混合
+    for (int i = 3; i < 5; i++) {
+      sum += texture(inputTexture, v_uv[i*2-1]).rgb * weight[i - 3];
+      sum += texture(inputTexture, v_uv[i*2]).rgb * weight[i - 3];
+
     }
     
     return vec4(sum, 1.0);
   }
 
-  
 }%

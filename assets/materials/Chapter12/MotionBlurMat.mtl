@@ -25,7 +25,7 @@
   ],
   "_props": [
     {
-      "_BlurAmount": 0.9,
+      "_BlurAmount": 0.8,
       "_LastFrameRenderTexture": {
         "__uuid__": "2ecd2051-eeb8-44f2-ba3a-2d48d030a2ee",
         "__expectedType__": "cc.RenderTexture"

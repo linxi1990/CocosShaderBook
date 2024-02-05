@@ -533,7 +533,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "global": true,
     "_shadingScale": 1,
+    "enableShadingScaleInEditor": false,
     "_id": "09TUBYf+hFfqb6eKFJJNCS"
   },
   {
@@ -828,6 +830,9 @@
     "lightProbeInfo": {
       "__id__": 30
     },
+    "postSettings": {
+      "__id__": 31
+    },
     "bakedWithStationaryMainLight": false,
     "bakedWithHighpLightmap": false
   },
@@ -890,6 +895,7 @@
       "z": 0
     },
     "_distance": 0,
+    "_planeBias": 1,
     "_shadowColor": {
       "__type__": "cc.Color",
       "r": 76,
@@ -981,5 +987,9 @@
     "_showConvex": false,
     "_data": null,
     "_lightProbeSphereVolume": 1
+  },
+  {
+    "__type__": "cc.PostSettingsInfo",
+    "_toneMappingType": 0
   }
 ]
