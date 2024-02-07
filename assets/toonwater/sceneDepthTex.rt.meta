@@ -1,0 +1,40 @@
+{
+  "ver": "1.2.2",
+  "importer": "render-texture",
+  "imported": true,
+  "uuid": "2327bf1b-6345-4dcc-a2ff-4dbf065bde6a",
+  "files": [
+    ".json"
+  ],
+  "subMetas": {
+    "f9941": {
+      "importer": "rt-sprite-frame",
+      "uuid": "2327bf1b-6345-4dcc-a2ff-4dbf065bde6a@f9941",
+      "displayName": "sceneDepthTex",
+      "id": "f9941",
+      "name": "spriteFrame",
+      "userData": {
+        "imageUuidOrDatabaseUri": "2327bf1b-6345-4dcc-a2ff-4dbf065bde6a",
+        "width": 1280,
+        "height": 960
+      },
+      "ver": "1.0.0",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "width": 1280,
+    "height": 960,
+    "anisotropy": 0,
+    "minfilter": "linear",
+    "magfilter": "linear",
+    "mipfilter": "none",
+    "wrapModeS": "repeat",
+    "wrapModeT": "repeat",
+    "redirect": "2327bf1b-6345-4dcc-a2ff-4dbf065bde6a@f9941"
+  }
+}

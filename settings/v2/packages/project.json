@@ -11,5 +11,15 @@
   "script": {
     "preserveSymlinks": true
   },
-  "custom_joint_texture_layouts": []
+  "custom_joint_texture_layouts": [],
+  "layer": [
+    {
+      "name": "scene",
+      "value": 524288
+    },
+    {
+      "name": "water",
+      "value": 262144
+    }
+  ]
 }
