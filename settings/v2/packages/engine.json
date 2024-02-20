@@ -122,7 +122,7 @@
         "_value": false
       },
       "custom-pipeline": {
-        "_value": true
+        "_value": false
       }
     },
     "flags": {},
@@ -132,7 +132,6 @@
       "animation",
       "audio",
       "base",
-      "custom-pipeline",
       "dragon-bones",
       "gfx-webgl",
       "gfx-webgl2",
@@ -161,6 +160,6 @@
     }
   },
   "macroConfig": {
-    "CUSTOM_PIPELINE_NAME": "Custom"
+    "CUSTOM_PIPELINE_NAME": ""
   }
 }

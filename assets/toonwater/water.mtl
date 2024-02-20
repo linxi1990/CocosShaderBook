@@ -5,19 +5,11 @@
   "__editorExtras__": {},
   "_native": "",
   "_effectAsset": {
-    "__uuid__": "eaa6bae9-fef5-4e8e-a8de-fc1dc5baace4",
+    "__uuid__": "5e6a5485-8e1e-42c1-8c3e-e3c877744aad",
     "__expectedType__": "cc.EffectAsset"
   },
   "_techIdx": 0,
   "_defines": [
-    {
-      "USE_TWOSIDE": true,
-      "USE_ALBEDO_MAP": true
-    },
-    {},
-    {},
-    {},
-    {},
     {}
   ],
   "_states": [
@@ -31,66 +23,43 @@
           {}
         ]
       }
-    },
-    {
-      "rasterizerState": {},
-      "depthStencilState": {},
-      "blendState": {
-        "targets": [
-          {}
-        ]
-      }
-    },
-    {
-      "rasterizerState": {},
-      "depthStencilState": {},
-      "blendState": {
-        "targets": [
-          {}
-        ]
-      }
-    },
-    {
-      "rasterizerState": {},
-      "depthStencilState": {},
-      "blendState": {
-        "targets": [
-          {}
-        ]
-      }
-    },
-    {
-      "rasterizerState": {},
-      "depthStencilState": {},
-      "blendState": {
-        "targets": [
-          {}
-        ]
-      }
-    },
-    {
-      "rasterizerState": {},
-      "depthStencilState": {},
-      "blendState": {
-        "targets": [
-          {}
-        ]
-      }
     }
   ],
   "_props": [
     {
-      "roughness": 0.8,
-      "metallic": 0.6,
       "mainTexture": {
         "__uuid__": "0445ed5b-8fb1-4af9-898c-e6bbb2409147@6c48a",
         "__expectedType__": "cc.Texture2D"
+      },
+      "mainColor": {
+        "__type__": "cc.Color",
+        "r": 105,
+        "g": 156,
+        "b": 221,
+        "a": 255
+      },
+      "_DepthGradientShallow": {
+        "__type__": "cc.Color",
+        "r": 138,
+        "g": 225,
+        "b": 247,
+        "a": 255
+      },
+      "_DepthGradientDeep": {
+        "__type__": "cc.Color",
+        "r": 29,
+        "g": 21,
+        "b": 238,
+        "a": 255
+      },
+      "noiseTexture": {
+        "__uuid__": "990edc91-ff76-468c-ad6a-3ff26c6545ed@6c48a",
+        "__expectedType__": "cc.Texture2D"
+      },
+      "_SurfaceDistortion": {
+        "__uuid__": "93a1e91f-fd6b-4d72-9fbb-0abd507c24cb@6c48a",
+        "__expectedType__": "cc.Texture2D"
       }
-    },
-    {},
-    {},
-    {},
-    {},
-    {}
+    }
   ]
 }
