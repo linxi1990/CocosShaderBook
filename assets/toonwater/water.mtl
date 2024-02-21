@@ -8,7 +8,7 @@
     "__uuid__": "5e6a5485-8e1e-42c1-8c3e-e3c877744aad",
     "__expectedType__": "cc.EffectAsset"
   },
-  "_techIdx": 0,
+  "_techIdx": 1,
   "_defines": [
     {}
   ],
@@ -20,7 +20,10 @@
       "depthStencilState": {},
       "blendState": {
         "targets": [
-          {}
+          {
+            "blendSrcAlpha": 2,
+            "blendDstAlpha": 5
+          }
         ]
       }
     }

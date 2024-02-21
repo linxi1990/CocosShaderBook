@@ -3,7 +3,7 @@
   "content": {
     "base": "2,2,0,0,0,0",
     "w": 1280,
-    "h": 960,
+    "h": 720,
     "n": "sceneDepthTex"
   }
 }

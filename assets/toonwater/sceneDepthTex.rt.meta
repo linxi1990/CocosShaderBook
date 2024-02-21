@@ -16,7 +16,7 @@
       "userData": {
         "imageUuidOrDatabaseUri": "2327bf1b-6345-4dcc-a2ff-4dbf065bde6a",
         "width": 1280,
-        "height": 960
+        "height": 720
       },
       "ver": "1.0.0",
       "imported": true,
@@ -28,7 +28,7 @@
   },
   "userData": {
     "width": 1280,
-    "height": 960,
+    "height": 720,
     "anisotropy": 0,
     "minfilter": "linear",
     "magfilter": "linear",

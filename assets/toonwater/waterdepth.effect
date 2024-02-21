@@ -240,9 +240,15 @@ CCProgram unlit-fs %{
       nosieAdd = surfaceNoiseSample;
     }
 
-    if(abs(sceneZ - waterZ) < 0.001){
-      nosieAdd = surfaceNoiseSample;
-    }
+    vec4 bianyuan = vec4(0.);
+    float foamDepthDifference01 = saturate(waterDepth / 0.05);
+    float surfaceNoiseCutoff = surfaceNoiseSample.r > foamDepthDifference01 * _SurfaceNoiseCutoff ? 1. : 0.;
+    bianyuan = vec4(surfaceNoiseCutoff);
+    // if(abs(sceneZ - waterZ) < 0.005 && surfaceNoiseSample.r > 0.5){
+    //   bianyuan = surfaceNoiseSample;
+    // }
+
+    // float surfaceNoiseSample = texture(noiseTexture, noiseUV).r;
 
     // float diff = clamp((sceneZ - sphereZ), 0.0, 1.0);
     // float fIntersect = 1.0 - diff;
@@ -261,7 +267,8 @@ CCProgram unlit-fs %{
     // vec4 color = texture(depthTexture, screenUV);
     // return color;
     // return o;
-    return waterColor + nosieAdd;
+    return vec4((waterColor + nosieAdd + bianyuan).xyz, 0.6);
+    // return waterColor + nosieAdd + bianyuan;
     // return vec4(sceneZ, 0., 0., 1.0);
   }
 }%
