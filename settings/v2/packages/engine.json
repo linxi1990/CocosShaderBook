@@ -74,7 +74,7 @@
         "_value": false
       },
       "geometry-renderer": {
-        "_value": false
+        "_value": true
       },
       "debug-renderer": {
         "_value": false
@@ -133,6 +133,7 @@
       "audio",
       "base",
       "dragon-bones",
+      "geometry-renderer",
       "gfx-webgl",
       "gfx-webgl2",
       "intersection-2d",

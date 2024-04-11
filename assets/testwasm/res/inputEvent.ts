@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, EventTouch, Input, input, Camera, geometry, PhysicsSystem, PhysicsRayResult, Mat4, view, Vec3, Vec4, Texture2D, ImageAsset, BufferAsset, RenderTexture, SpriteFrame, Sprite, director, MeshRenderer, UITransform } from 'cc';
+import { _decorator, Component, Node, EventTouch, Input, input, Camera, geometry, PhysicsSystem, PhysicsRayResult, Mat4, view, Vec3, Vec4, Texture2D, ImageAsset, BufferAsset, RenderTexture, SpriteFrame, Sprite, director, MeshRenderer, UITransform, Color, Mesh, gfx, utils, v3 } from 'cc';
 import { graphics } from './graphics';
 const { ccclass, property } = _decorator;
 
@@ -8,6 +8,7 @@ const enum ERaycastType {
 }
 
 const ppos:Vec4 = new Vec4();
+const vPos:Vec3 = new Vec3();
 
 @ccclass('inputEvent')
 export class inputEvent extends Component {
@@ -27,15 +28,21 @@ export class inputEvent extends Component {
     mesh:MeshRenderer = null;
 
     private tex = new Texture2D();
-    private r = 10;
+    private r = 5;
 
     private _ray: geometry.Ray = new geometry.Ray();
     private _mask: number = 0xffffffff;
     private _raycastType: ERaycastType = ERaycastType.CLOSEST;
     private _maxDistance: number = 100;
 
+    private posArr:Vec3[] = [];
+
 
     start() {
+        let sphere = new geometry.Sphere(0,0,0,this.r);
+        // this.mainCamera?.camera.initGeometryRenderer();
+        geometry.Plane.fromNormalAndPoint
+        // geometry.Sphere.
         let width = this.rt.width;
         let height = this.rt.height;
         let pixels = this.rt.readPixels(0, 0, width, height);
@@ -99,7 +106,23 @@ export class inputEvent extends Component {
 
                         console.log(texX, texY);
 
-                        this.drawAt(texX, texY);
+                        /**遍历顶点 */
+                        let _mesh:Mesh = r.collider.node.getComponent(MeshRenderer).mesh;
+                        let vertices = _mesh.readAttribute(0, gfx.AttributeName.ATTR_POSITION);
+                        const mesh = utils.readMesh(_mesh, 0);
+                        this.posArr = [];
+                        for(let i = 0; i < mesh.positions.length; i = i + 3){
+                            let pos = new Vec3();
+                            Vec3.transformMat4(pos, v3(mesh.positions[i], mesh.positions[i + 1], mesh.positions[i + 2]), mode);
+                            if(Vec3.distance(r.hitPoint, pos) < this.r){
+                                let uvIdx = i / 3;
+                                pos.x = Math.floor(1024 * mesh.uvs[uvIdx * 2]);
+                                pos.y = Math.floor(1024 * mesh.uvs[uvIdx * 2 + 1]);
+                                this.posArr.push(pos);
+                            }
+                        }
+
+                        this.drawPosArrAt(this.posArr);
                         // this.pen.drawCircle(texX, texY);
                     }    
                     break;
@@ -136,6 +159,18 @@ export class inputEvent extends Component {
         this.tex.image = img;
 
         this.sp.spriteFrame.texture = this.tex;
+    }
+
+    drawPosArrAt(posArr:Vec3[]){
+        let pixelBuf:Uint8Array = this.readPixels()
+        let dataView = new DataView(pixelBuf.buffer);
+
+        for(let i = 0; i < posArr.length; i ++){
+            dataView.setUint32(posArr[i].x * 4 + posArr[i].y * 1023 * 4, 0xff000000, true);
+        }
+        this.tex.uploadData(pixelBuf);
+
+        this.mesh.materials[0].setProperty("mixTexture", this.tex);
     }
 
     drawAt(x:number, y:number){
@@ -230,7 +265,7 @@ export class inputEvent extends Component {
     }
 
     update(deltaTime: number) {
-        
+        // this.mainCamera?.camera?.geometryRenderer?.addSphere(this.node.worldPosition, 1, Color.GREEN, 20);
     }
 }
 
