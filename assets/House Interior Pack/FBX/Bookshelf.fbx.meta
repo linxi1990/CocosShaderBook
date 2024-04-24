@@ -1,0 +1,98 @@
+{
+  "ver": "2.3.12",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "eba086c5-461e-47f8-a6f3-cb22b87be1ca",
+  "files": [],
+  "subMetas": {
+    "65559": {
+      "importer": "gltf-mesh",
+      "uuid": "eba086c5-461e-47f8-a6f3-cb22b87be1ca@65559",
+      "displayName": "",
+      "id": "65559",
+      "name": "Cube.021.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 120
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "935df": {
+      "importer": "gltf-material",
+      "uuid": "eba086c5-461e-47f8-a6f3-cb22b87be1ca@935df",
+      "displayName": "",
+      "id": "935df",
+      "name": "White.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ef0c0": {
+      "importer": "gltf-scene",
+      "uuid": "eba086c5-461e-47f8-a6f3-cb22b87be1ca@ef0c0",
+      "displayName": "",
+      "id": "ef0c0",
+      "name": "Bookshelf.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
+    },
+    "redirect": "eba086c5-461e-47f8-a6f3-cb22b87be1ca@ef0c0",
+    "assetFinder": {
+      "meshes": [
+        "eba086c5-461e-47f8-a6f3-cb22b87be1ca@65559"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "eba086c5-461e-47f8-a6f3-cb22b87be1ca@935df"
+      ],
+      "scenes": [
+        "eba086c5-461e-47f8-a6f3-cb22b87be1ca@ef0c0"
+      ]
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
+  }
+}

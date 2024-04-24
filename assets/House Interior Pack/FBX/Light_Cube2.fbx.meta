@@ -1,0 +1,149 @@
+{
+  "ver": "2.3.12",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "de26d8c9-6546-42e1-bca8-5b2ed7035d3e",
+  "files": [],
+  "subMetas": {
+    "d059a": {
+      "importer": "gltf-mesh",
+      "uuid": "de26d8c9-6546-42e1-bca8-5b2ed7035d3e@d059a",
+      "displayName": "",
+      "id": "d059a",
+      "name": "Light_Cube2_Material0.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 444
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "862e8": {
+      "importer": "gltf-material",
+      "uuid": "de26d8c9-6546-42e1-bca8-5b2ed7035d3e@862e8",
+      "displayName": "",
+      "id": "862e8",
+      "name": "Grey.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "b3b37": {
+      "importer": "gltf-material",
+      "uuid": "de26d8c9-6546-42e1-bca8-5b2ed7035d3e@b3b37",
+      "displayName": "",
+      "id": "b3b37",
+      "name": "Light.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "05a83": {
+      "importer": "gltf-material",
+      "uuid": "de26d8c9-6546-42e1-bca8-5b2ed7035d3e@05a83",
+      "displayName": "",
+      "id": "05a83",
+      "name": "LightMetal.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "935df": {
+      "importer": "gltf-material",
+      "uuid": "de26d8c9-6546-42e1-bca8-5b2ed7035d3e@935df",
+      "displayName": "",
+      "id": "935df",
+      "name": "White.material",
+      "userData": {
+        "gltfIndex": 3
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0f945": {
+      "importer": "gltf-scene",
+      "uuid": "de26d8c9-6546-42e1-bca8-5b2ed7035d3e@0f945",
+      "displayName": "",
+      "id": "0f945",
+      "name": "Light_Cube2.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
+    },
+    "redirect": "de26d8c9-6546-42e1-bca8-5b2ed7035d3e@0f945",
+    "assetFinder": {
+      "meshes": [
+        "de26d8c9-6546-42e1-bca8-5b2ed7035d3e@d059a"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "de26d8c9-6546-42e1-bca8-5b2ed7035d3e@862e8",
+        "de26d8c9-6546-42e1-bca8-5b2ed7035d3e@b3b37",
+        "de26d8c9-6546-42e1-bca8-5b2ed7035d3e@05a83",
+        "de26d8c9-6546-42e1-bca8-5b2ed7035d3e@935df"
+      ],
+      "scenes": [
+        "de26d8c9-6546-42e1-bca8-5b2ed7035d3e@0f945"
+      ]
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
+  }
+}

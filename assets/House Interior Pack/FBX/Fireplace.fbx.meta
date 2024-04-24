@@ -1,0 +1,98 @@
+{
+  "ver": "2.3.12",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "16b95621-8a1c-482d-80a5-a859f5f46299",
+  "files": [],
+  "subMetas": {
+    "3a858": {
+      "importer": "gltf-mesh",
+      "uuid": "16b95621-8a1c-482d-80a5-a859f5f46299@3a858",
+      "displayName": "",
+      "id": "3a858",
+      "name": "Cube.089.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 360
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "4d45e": {
+      "importer": "gltf-material",
+      "uuid": "16b95621-8a1c-482d-80a5-a859f5f46299@4d45e",
+      "displayName": "",
+      "id": "4d45e",
+      "name": "Marble.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "208a7": {
+      "importer": "gltf-scene",
+      "uuid": "16b95621-8a1c-482d-80a5-a859f5f46299@208a7",
+      "displayName": "",
+      "id": "208a7",
+      "name": "Fireplace.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
+    },
+    "redirect": "16b95621-8a1c-482d-80a5-a859f5f46299@208a7",
+    "assetFinder": {
+      "meshes": [
+        "16b95621-8a1c-482d-80a5-a859f5f46299@3a858"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "16b95621-8a1c-482d-80a5-a859f5f46299@4d45e"
+      ],
+      "scenes": [
+        "16b95621-8a1c-482d-80a5-a859f5f46299@208a7"
+      ]
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
+  }
+}

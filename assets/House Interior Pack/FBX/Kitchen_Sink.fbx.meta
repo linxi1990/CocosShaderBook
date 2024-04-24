@@ -1,0 +1,149 @@
+{
+  "ver": "2.3.12",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "9b211e31-c348-4cc9-8f9b-ed68be946cee",
+  "files": [],
+  "subMetas": {
+    "63041": {
+      "importer": "gltf-scene",
+      "uuid": "9b211e31-c348-4cc9-8f9b-ed68be946cee@63041",
+      "displayName": "",
+      "id": "63041",
+      "name": "Kitchen_Sink.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "027e2": {
+      "importer": "gltf-mesh",
+      "uuid": "9b211e31-c348-4cc9-8f9b-ed68be946cee@027e2",
+      "displayName": "",
+      "id": "027e2",
+      "name": "Kitchen_Sink_Material0.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 444
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "7ac23": {
+      "importer": "gltf-material",
+      "uuid": "9b211e31-c348-4cc9-8f9b-ed68be946cee@7ac23",
+      "displayName": "",
+      "id": "7ac23",
+      "name": "Kitchen.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "935df": {
+      "importer": "gltf-material",
+      "uuid": "9b211e31-c348-4cc9-8f9b-ed68be946cee@935df",
+      "displayName": "",
+      "id": "935df",
+      "name": "White.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "05a83": {
+      "importer": "gltf-material",
+      "uuid": "9b211e31-c348-4cc9-8f9b-ed68be946cee@05a83",
+      "displayName": "",
+      "id": "05a83",
+      "name": "LightMetal.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "77f7b": {
+      "importer": "gltf-material",
+      "uuid": "9b211e31-c348-4cc9-8f9b-ed68be946cee@77f7b",
+      "displayName": "",
+      "id": "77f7b",
+      "name": "KitchenTop.material",
+      "userData": {
+        "gltfIndex": 3
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
+    },
+    "redirect": "9b211e31-c348-4cc9-8f9b-ed68be946cee@63041",
+    "assetFinder": {
+      "meshes": [
+        "9b211e31-c348-4cc9-8f9b-ed68be946cee@027e2"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "9b211e31-c348-4cc9-8f9b-ed68be946cee@7ac23",
+        "9b211e31-c348-4cc9-8f9b-ed68be946cee@935df",
+        "9b211e31-c348-4cc9-8f9b-ed68be946cee@05a83",
+        "9b211e31-c348-4cc9-8f9b-ed68be946cee@77f7b"
+      ],
+      "scenes": [
+        "9b211e31-c348-4cc9-8f9b-ed68be946cee@63041"
+      ]
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
+  }
+}

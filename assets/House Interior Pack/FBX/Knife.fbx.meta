@@ -1,0 +1,98 @@
+{
+  "ver": "2.3.12",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "d8d833fd-22c8-4c9a-ad15-5112f70c4442",
+  "files": [],
+  "subMetas": {
+    "38a9f": {
+      "importer": "gltf-mesh",
+      "uuid": "d8d833fd-22c8-4c9a-ad15-5112f70c4442@38a9f",
+      "displayName": "",
+      "id": "38a9f",
+      "name": "Plane.011.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 112
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "05a83": {
+      "importer": "gltf-material",
+      "uuid": "d8d833fd-22c8-4c9a-ad15-5112f70c4442@05a83",
+      "displayName": "",
+      "id": "05a83",
+      "name": "LightMetal.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "7db35": {
+      "importer": "gltf-scene",
+      "uuid": "d8d833fd-22c8-4c9a-ad15-5112f70c4442@7db35",
+      "displayName": "",
+      "id": "7db35",
+      "name": "Knife.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
+    },
+    "redirect": "d8d833fd-22c8-4c9a-ad15-5112f70c4442@7db35",
+    "assetFinder": {
+      "meshes": [
+        "d8d833fd-22c8-4c9a-ad15-5112f70c4442@38a9f"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "d8d833fd-22c8-4c9a-ad15-5112f70c4442@05a83"
+      ],
+      "scenes": [
+        "d8d833fd-22c8-4c9a-ad15-5112f70c4442@7db35"
+      ]
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
+  }
+}

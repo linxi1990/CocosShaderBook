@@ -1,0 +1,149 @@
+{
+  "ver": "2.3.12",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "68542575-75f7-4f1b-be17-7762b63378ae",
+  "files": [],
+  "subMetas": {
+    "06019": {
+      "importer": "gltf-mesh",
+      "uuid": "68542575-75f7-4f1b-be17-7762b63378ae@06019",
+      "displayName": "",
+      "id": "06019",
+      "name": "Houseplant_2_Material0.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 324
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8f8aa": {
+      "importer": "gltf-material",
+      "uuid": "68542575-75f7-4f1b-be17-7762b63378ae@8f8aa",
+      "displayName": "",
+      "id": "8f8aa",
+      "name": "Black.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1f97b": {
+      "importer": "gltf-material",
+      "uuid": "68542575-75f7-4f1b-be17-7762b63378ae@1f97b",
+      "displayName": "",
+      "id": "1f97b",
+      "name": "Brown.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "04761": {
+      "importer": "gltf-material",
+      "uuid": "68542575-75f7-4f1b-be17-7762b63378ae@04761",
+      "displayName": "",
+      "id": "04761",
+      "name": "DarkGreen.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "50e16": {
+      "importer": "gltf-material",
+      "uuid": "68542575-75f7-4f1b-be17-7762b63378ae@50e16",
+      "displayName": "",
+      "id": "50e16",
+      "name": "LightOrange.material",
+      "userData": {
+        "gltfIndex": 3
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "86e9e": {
+      "importer": "gltf-scene",
+      "uuid": "68542575-75f7-4f1b-be17-7762b63378ae@86e9e",
+      "displayName": "",
+      "id": "86e9e",
+      "name": "Houseplant_2.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
+    },
+    "redirect": "68542575-75f7-4f1b-be17-7762b63378ae@86e9e",
+    "assetFinder": {
+      "meshes": [
+        "68542575-75f7-4f1b-be17-7762b63378ae@06019"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "68542575-75f7-4f1b-be17-7762b63378ae@8f8aa",
+        "68542575-75f7-4f1b-be17-7762b63378ae@1f97b",
+        "68542575-75f7-4f1b-be17-7762b63378ae@04761",
+        "68542575-75f7-4f1b-be17-7762b63378ae@50e16"
+      ],
+      "scenes": [
+        "68542575-75f7-4f1b-be17-7762b63378ae@86e9e"
+      ]
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "ver": "2.3.12",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "b299dda9-6a8a-49ea-a382-9bf8e44e222b",
+  "files": [],
+  "subMetas": {
+    "81247": {
+      "importer": "gltf-material",
+      "uuid": "b299dda9-6a8a-49ea-a382-9bf8e44e222b@81247",
+      "displayName": "",
+      "id": "81247",
+      "name": "Couch_BeigeDark.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "6e75a": {
+      "importer": "gltf-mesh",
+      "uuid": "b299dda9-6a8a-49ea-a382-9bf8e44e222b@6e75a",
+      "displayName": "",
+      "id": "6e75a",
+      "name": "Couch_Small2_Material0.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 466
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "54cf0": {
+      "importer": "gltf-material",
+      "uuid": "b299dda9-6a8a-49ea-a382-9bf8e44e222b@54cf0",
+      "displayName": "",
+      "id": "54cf0",
+      "name": "Couch_Beige.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8a363": {
+      "importer": "gltf-scene",
+      "uuid": "b299dda9-6a8a-49ea-a382-9bf8e44e222b@8a363",
+      "displayName": "",
+      "id": "8a363",
+      "name": "Couch_Small2.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
+    },
+    "redirect": "b299dda9-6a8a-49ea-a382-9bf8e44e222b@8a363",
+    "assetFinder": {
+      "meshes": [
+        "b299dda9-6a8a-49ea-a382-9bf8e44e222b@6e75a"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "b299dda9-6a8a-49ea-a382-9bf8e44e222b@81247",
+        "b299dda9-6a8a-49ea-a382-9bf8e44e222b@54cf0"
+      ],
+      "scenes": [
+        "b299dda9-6a8a-49ea-a382-9bf8e44e222b@8a363"
+      ]
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
+  }
+}

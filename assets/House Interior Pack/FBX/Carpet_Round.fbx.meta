@@ -1,0 +1,115 @@
+{
+  "ver": "2.3.12",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "99fcb770-a0c3-4262-bf16-1d1194e9485c",
+  "files": [],
+  "subMetas": {
+    "54bdf": {
+      "importer": "gltf-mesh",
+      "uuid": "99fcb770-a0c3-4262-bf16-1d1194e9485c@54bdf",
+      "displayName": "",
+      "id": "54bdf",
+      "name": "Carpet_Round_Material0.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 128
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "2da88": {
+      "importer": "gltf-material",
+      "uuid": "99fcb770-a0c3-4262-bf16-1d1194e9485c@2da88",
+      "displayName": "",
+      "id": "2da88",
+      "name": "DarkRed.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "50e16": {
+      "importer": "gltf-material",
+      "uuid": "99fcb770-a0c3-4262-bf16-1d1194e9485c@50e16",
+      "displayName": "",
+      "id": "50e16",
+      "name": "LightOrange.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "31ebf": {
+      "importer": "gltf-scene",
+      "uuid": "99fcb770-a0c3-4262-bf16-1d1194e9485c@31ebf",
+      "displayName": "",
+      "id": "31ebf",
+      "name": "Carpet_Round.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
+    },
+    "redirect": "99fcb770-a0c3-4262-bf16-1d1194e9485c@31ebf",
+    "assetFinder": {
+      "meshes": [
+        "99fcb770-a0c3-4262-bf16-1d1194e9485c@54bdf"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "99fcb770-a0c3-4262-bf16-1d1194e9485c@2da88",
+        "99fcb770-a0c3-4262-bf16-1d1194e9485c@50e16"
+      ],
+      "scenes": [
+        "99fcb770-a0c3-4262-bf16-1d1194e9485c@31ebf"
+      ]
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
+  }
+}

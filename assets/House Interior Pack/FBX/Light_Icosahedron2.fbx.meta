@@ -1,0 +1,149 @@
+{
+  "ver": "2.3.12",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "b2f4b7d9-de8c-4a17-a963-3fd7ce195303",
+  "files": [],
+  "subMetas": {
+    "bde2b": {
+      "importer": "gltf-mesh",
+      "uuid": "b2f4b7d9-de8c-4a17-a963-3fd7ce195303@bde2b",
+      "displayName": "",
+      "id": "bde2b",
+      "name": "Light_Icosahedron2_Material0.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 3596
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "862e8": {
+      "importer": "gltf-material",
+      "uuid": "b2f4b7d9-de8c-4a17-a963-3fd7ce195303@862e8",
+      "displayName": "",
+      "id": "862e8",
+      "name": "Grey.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "b3b37": {
+      "importer": "gltf-material",
+      "uuid": "b2f4b7d9-de8c-4a17-a963-3fd7ce195303@b3b37",
+      "displayName": "",
+      "id": "b3b37",
+      "name": "Light.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "05a83": {
+      "importer": "gltf-material",
+      "uuid": "b2f4b7d9-de8c-4a17-a963-3fd7ce195303@05a83",
+      "displayName": "",
+      "id": "05a83",
+      "name": "LightMetal.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "935df": {
+      "importer": "gltf-material",
+      "uuid": "b2f4b7d9-de8c-4a17-a963-3fd7ce195303@935df",
+      "displayName": "",
+      "id": "935df",
+      "name": "White.material",
+      "userData": {
+        "gltfIndex": 3
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d7f64": {
+      "importer": "gltf-scene",
+      "uuid": "b2f4b7d9-de8c-4a17-a963-3fd7ce195303@d7f64",
+      "displayName": "",
+      "id": "d7f64",
+      "name": "Light_Icosahedron2.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
+    },
+    "redirect": "b2f4b7d9-de8c-4a17-a963-3fd7ce195303@d7f64",
+    "assetFinder": {
+      "meshes": [
+        "b2f4b7d9-de8c-4a17-a963-3fd7ce195303@bde2b"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "b2f4b7d9-de8c-4a17-a963-3fd7ce195303@862e8",
+        "b2f4b7d9-de8c-4a17-a963-3fd7ce195303@b3b37",
+        "b2f4b7d9-de8c-4a17-a963-3fd7ce195303@05a83",
+        "b2f4b7d9-de8c-4a17-a963-3fd7ce195303@935df"
+      ],
+      "scenes": [
+        "b2f4b7d9-de8c-4a17-a963-3fd7ce195303@d7f64"
+      ]
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
+  }
+}

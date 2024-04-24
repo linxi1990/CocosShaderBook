@@ -1,0 +1,98 @@
+{
+  "ver": "2.3.12",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "ef69023d-e98a-48b9-845a-fdc19ed3175a",
+  "files": [],
+  "subMetas": {
+    "d7dae": {
+      "importer": "gltf-mesh",
+      "uuid": "ef69023d-e98a-48b9-845a-fdc19ed3175a@d7dae",
+      "displayName": "",
+      "id": "d7dae",
+      "name": "Cube.036.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 1297
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "227ef": {
+      "importer": "gltf-material",
+      "uuid": "ef69023d-e98a-48b9-845a-fdc19ed3175a@227ef",
+      "displayName": "",
+      "id": "227ef",
+      "name": "Couch_Green.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8d581": {
+      "importer": "gltf-scene",
+      "uuid": "ef69023d-e98a-48b9-845a-fdc19ed3175a@8d581",
+      "displayName": "",
+      "id": "8d581",
+      "name": "Couch_Large3.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
+    },
+    "redirect": "ef69023d-e98a-48b9-845a-fdc19ed3175a@8d581",
+    "assetFinder": {
+      "meshes": [
+        "ef69023d-e98a-48b9-845a-fdc19ed3175a@d7dae"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "ef69023d-e98a-48b9-845a-fdc19ed3175a@227ef"
+      ],
+      "scenes": [
+        "ef69023d-e98a-48b9-845a-fdc19ed3175a@8d581"
+      ]
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
+  }
+}

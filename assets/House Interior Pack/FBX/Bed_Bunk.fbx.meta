@@ -1,0 +1,149 @@
+{
+  "ver": "2.3.12",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "5be34a0a-820a-4578-b170-adfb00230ee0",
+  "files": [],
+  "subMetas": {
+    "659c7": {
+      "importer": "gltf-mesh",
+      "uuid": "5be34a0a-820a-4578-b170-adfb00230ee0@659c7",
+      "displayName": "",
+      "id": "659c7",
+      "name": "Bed_Bunk_Material0.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 960
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8c1ef": {
+      "importer": "gltf-material",
+      "uuid": "5be34a0a-820a-4578-b170-adfb00230ee0@8c1ef",
+      "displayName": "",
+      "id": "8c1ef",
+      "name": "Wood.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "935df": {
+      "importer": "gltf-material",
+      "uuid": "5be34a0a-820a-4578-b170-adfb00230ee0@935df",
+      "displayName": "",
+      "id": "935df",
+      "name": "White.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "5fd32": {
+      "importer": "gltf-material",
+      "uuid": "5be34a0a-820a-4578-b170-adfb00230ee0@5fd32",
+      "displayName": "",
+      "id": "5fd32",
+      "name": "Red.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "862e8": {
+      "importer": "gltf-material",
+      "uuid": "5be34a0a-820a-4578-b170-adfb00230ee0@862e8",
+      "displayName": "",
+      "id": "862e8",
+      "name": "Grey.material",
+      "userData": {
+        "gltfIndex": 3
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0e335": {
+      "importer": "gltf-scene",
+      "uuid": "5be34a0a-820a-4578-b170-adfb00230ee0@0e335",
+      "displayName": "",
+      "id": "0e335",
+      "name": "Bed_Bunk.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
+    },
+    "redirect": "5be34a0a-820a-4578-b170-adfb00230ee0@0e335",
+    "assetFinder": {
+      "meshes": [
+        "5be34a0a-820a-4578-b170-adfb00230ee0@659c7"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "5be34a0a-820a-4578-b170-adfb00230ee0@8c1ef",
+        "5be34a0a-820a-4578-b170-adfb00230ee0@935df",
+        "5be34a0a-820a-4578-b170-adfb00230ee0@5fd32",
+        "5be34a0a-820a-4578-b170-adfb00230ee0@862e8"
+      ],
+      "scenes": [
+        "5be34a0a-820a-4578-b170-adfb00230ee0@0e335"
+      ]
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
+  }
+}

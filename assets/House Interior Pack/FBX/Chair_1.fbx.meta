@@ -1,0 +1,98 @@
+{
+  "ver": "2.3.12",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "000d6d0e-e0b0-4779-90fd-bcfc5361c65a",
+  "files": [],
+  "subMetas": {
+    "fd4a2": {
+      "importer": "gltf-mesh",
+      "uuid": "000d6d0e-e0b0-4779-90fd-bcfc5361c65a@fd4a2",
+      "displayName": "",
+      "id": "fd4a2",
+      "name": "Cube.004.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 216
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8c1ef": {
+      "importer": "gltf-material",
+      "uuid": "000d6d0e-e0b0-4779-90fd-bcfc5361c65a@8c1ef",
+      "displayName": "",
+      "id": "8c1ef",
+      "name": "Wood.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "06844": {
+      "importer": "gltf-scene",
+      "uuid": "000d6d0e-e0b0-4779-90fd-bcfc5361c65a@06844",
+      "displayName": "",
+      "id": "06844",
+      "name": "Chair_1.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
+    },
+    "redirect": "000d6d0e-e0b0-4779-90fd-bcfc5361c65a@06844",
+    "assetFinder": {
+      "meshes": [
+        "000d6d0e-e0b0-4779-90fd-bcfc5361c65a@fd4a2"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "000d6d0e-e0b0-4779-90fd-bcfc5361c65a@8c1ef"
+      ],
+      "scenes": [
+        "000d6d0e-e0b0-4779-90fd-bcfc5361c65a@06844"
+      ]
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
+  }
+}

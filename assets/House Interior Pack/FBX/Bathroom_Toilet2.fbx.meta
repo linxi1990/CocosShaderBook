@@ -1,0 +1,98 @@
+{
+  "ver": "2.3.12",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "33db3282-5e8b-4134-8e3f-43a8eca18c65",
+  "files": [],
+  "subMetas": {
+    "19531": {
+      "importer": "gltf-mesh",
+      "uuid": "33db3282-5e8b-4134-8e3f-43a8eca18c65@19531",
+      "displayName": "",
+      "id": "19531",
+      "name": "Cube.038.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 334
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "935df": {
+      "importer": "gltf-material",
+      "uuid": "33db3282-5e8b-4134-8e3f-43a8eca18c65@935df",
+      "displayName": "",
+      "id": "935df",
+      "name": "White.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ef0a0": {
+      "importer": "gltf-scene",
+      "uuid": "33db3282-5e8b-4134-8e3f-43a8eca18c65@ef0a0",
+      "displayName": "",
+      "id": "ef0a0",
+      "name": "Bathroom_Toilet2.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
+    },
+    "redirect": "33db3282-5e8b-4134-8e3f-43a8eca18c65@ef0a0",
+    "assetFinder": {
+      "meshes": [
+        "33db3282-5e8b-4134-8e3f-43a8eca18c65@19531"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "33db3282-5e8b-4134-8e3f-43a8eca18c65@935df"
+      ],
+      "scenes": [
+        "33db3282-5e8b-4134-8e3f-43a8eca18c65@ef0a0"
+      ]
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
+  }
+}

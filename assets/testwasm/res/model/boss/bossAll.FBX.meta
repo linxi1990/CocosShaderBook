@@ -1,0 +1,200 @@
+{
+  "ver": "2.3.12",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "4c4f43e4-d540-4773-9446-f2ff9a37d6b2",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "0eb9c": {
+      "importer": "gltf-mesh",
+      "uuid": "4c4f43e4-d540-4773-9446-f2ff9a37d6b2@0eb9c",
+      "displayName": "",
+      "id": "0eb9c",
+      "name": "boss.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 1656
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "73b7f": {
+      "importer": "gltf-animation",
+      "uuid": "4c4f43e4-d540-4773-9446-f2ff9a37d6b2@73b7f",
+      "displayName": "",
+      "id": "73b7f",
+      "name": "Take 001.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 12.166666984558105
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "438fe": {
+      "importer": "gltf-skeleton",
+      "uuid": "4c4f43e4-d540-4773-9446-f2ff9a37d6b2@438fe",
+      "displayName": "",
+      "id": "438fe",
+      "name": "UnnamedSkeleton.skeleton",
+      "userData": {
+        "gltfIndex": 0,
+        "jointsLength": 23
+      },
+      "ver": "1.0.1",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c4061": {
+      "importer": "gltf-material",
+      "uuid": "4c4f43e4-d540-4773-9446-f2ff9a37d6b2@c4061",
+      "displayName": "",
+      "id": "c4061",
+      "name": "boss.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "22ad0": {
+      "importer": "gltf-scene",
+      "uuid": "4c4f43e4-d540-4773-9446-f2ff9a37d6b2@22ad0",
+      "displayName": "",
+      "id": "22ad0",
+      "name": "bossAll.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "Take 001",
+        "duration": 12.166666984558105,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "Take 001",
+            "from": 0,
+            "to": 12.166666984558105,
+            "wrapMode": 2,
+            "previousId": "73b7f"
+          }
+        ]
+      }
+    ],
+    "redirect": "4c4f43e4-d540-4773-9446-f2ff9a37d6b2@22ad0",
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "4c4f43e4-d540-4773-9446-f2ff9a37d6b2@0eb9c"
+      ],
+      "skeletons": [
+        "4c4f43e4-d540-4773-9446-f2ff9a37d6b2@438fe"
+      ],
+      "textures": [],
+      "materials": [
+        "4c4f43e4-d540-4773-9446-f2ff9a37d6b2@c4061"
+      ],
+      "scenes": [
+        "4c4f43e4-d540-4773-9446-f2ff9a37d6b2@22ad0"
+      ]
+    },
+    "materials": {
+      "4c4f43e4-d540-4773-9446-f2ff9a37d6b2@c4061": {
+        "__type__": "cc.Material",
+        "_name": "",
+        "_objFlags": 0,
+        "__editorExtras__": {},
+        "_native": "",
+        "_effectAsset": {
+          "__uuid__": "f35b794e-45f4-423a-8dd2-b6a29a8c471d",
+          "__expectedType__": "cc.EffectAsset"
+        },
+        "_techIdx": 0,
+        "_defines": [
+          {}
+        ],
+        "_states": [
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          }
+        ],
+        "_props": [
+          {
+            "mainTexture": {
+              "__uuid__": "f6a44c20-d147-4e7d-be0b-58a931d2651f@6c48a",
+              "__expectedType__": "cc.Texture2D"
+            },
+            "mainColor": {
+              "__type__": "cc.Color",
+              "r": 202,
+              "g": 202,
+              "b": 202,
+              "a": 255
+            }
+          }
+        ]
+      }
+    }
+  }
+}

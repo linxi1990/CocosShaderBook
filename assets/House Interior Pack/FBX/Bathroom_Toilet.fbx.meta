@@ -1,0 +1,137 @@
+{
+  "ver": "2.3.12",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "01efcdce-15fc-446a-ad52-e2d3aa1fc837",
+  "files": [],
+  "subMetas": {
+    "0a48a": {
+      "importer": "gltf-mesh",
+      "uuid": "01efcdce-15fc-446a-ad52-e2d3aa1fc837@0a48a",
+      "displayName": "",
+      "id": "0a48a",
+      "name": "Cube.007.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 402
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "935df": {
+      "importer": "gltf-material",
+      "uuid": "01efcdce-15fc-446a-ad52-e2d3aa1fc837@935df",
+      "displayName": "",
+      "id": "935df",
+      "name": "White.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0d6bf": {
+      "importer": "gltf-scene",
+      "uuid": "01efcdce-15fc-446a-ad52-e2d3aa1fc837@0d6bf",
+      "displayName": "",
+      "id": "0d6bf",
+      "name": "Bathroom_Toilet.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
+    },
+    "redirect": "01efcdce-15fc-446a-ad52-e2d3aa1fc837@0d6bf",
+    "assetFinder": {
+      "meshes": [
+        "01efcdce-15fc-446a-ad52-e2d3aa1fc837@0a48a"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "01efcdce-15fc-446a-ad52-e2d3aa1fc837@935df"
+      ],
+      "scenes": [
+        "01efcdce-15fc-446a-ad52-e2d3aa1fc837@0d6bf"
+      ]
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "materials": {
+      "01efcdce-15fc-446a-ad52-e2d3aa1fc837@935df": {
+        "__type__": "cc.Material",
+        "_name": "",
+        "_objFlags": 0,
+        "__editorExtras__": {},
+        "_native": "",
+        "_effectAsset": {
+          "__uuid__": "f35b794e-45f4-423a-8dd2-b6a29a8c471d",
+          "__expectedType__": "cc.EffectAsset"
+        },
+        "_techIdx": 0,
+        "_defines": [
+          {}
+        ],
+        "_states": [
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          }
+        ],
+        "_props": [
+          {
+            "mainColor": {
+              "__type__": "cc.Color",
+              "r": 178,
+              "g": 178,
+              "b": 175,
+              "a": 255
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "ver": "2.3.12",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "0c02e625-444d-43ee-bda3-5a3d996dfb2c",
+  "files": [],
+  "subMetas": {
+    "55dbd": {
+      "importer": "gltf-mesh",
+      "uuid": "0c02e625-444d-43ee-bda3-5a3d996dfb2c@55dbd",
+      "displayName": "",
+      "id": "55dbd",
+      "name": "Kitchen_Fridge_Material0.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 404
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "935df": {
+      "importer": "gltf-material",
+      "uuid": "0c02e625-444d-43ee-bda3-5a3d996dfb2c@935df",
+      "displayName": "",
+      "id": "935df",
+      "name": "White.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8f8aa": {
+      "importer": "gltf-material",
+      "uuid": "0c02e625-444d-43ee-bda3-5a3d996dfb2c@8f8aa",
+      "displayName": "",
+      "id": "8f8aa",
+      "name": "Black.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "01699": {
+      "importer": "gltf-scene",
+      "uuid": "0c02e625-444d-43ee-bda3-5a3d996dfb2c@01699",
+      "displayName": "",
+      "id": "01699",
+      "name": "Kitchen_Fridge.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
+    },
+    "redirect": "0c02e625-444d-43ee-bda3-5a3d996dfb2c@01699",
+    "assetFinder": {
+      "meshes": [
+        "0c02e625-444d-43ee-bda3-5a3d996dfb2c@55dbd"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "0c02e625-444d-43ee-bda3-5a3d996dfb2c@935df",
+        "0c02e625-444d-43ee-bda3-5a3d996dfb2c@8f8aa"
+      ],
+      "scenes": [
+        "0c02e625-444d-43ee-bda3-5a3d996dfb2c@01699"
+      ]
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
+  }
+}

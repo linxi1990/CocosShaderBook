@@ -28,7 +28,7 @@ export class inputEvent extends Component {
     mesh:MeshRenderer = null;
 
     private tex = new Texture2D();
-    private r = 5;
+    private r = 0.25;
 
     private _ray: geometry.Ray = new geometry.Ray();
     private _mask: number = 0xffffffff;
@@ -37,10 +37,11 @@ export class inputEvent extends Component {
 
     private posArr:Vec3[] = [];
 
+    private _canRotate = false;
 
     start() {
         let sphere = new geometry.Sphere(0,0,0,this.r);
-        // this.mainCamera?.camera.initGeometryRenderer();
+        this.mainCamera?.camera.initGeometryRenderer();
         geometry.Plane.fromNormalAndPoint
         // geometry.Sphere.
         let width = this.rt.width;
@@ -54,8 +55,94 @@ export class inputEvent extends Component {
             this.mesh.node.getComponent(UITransform);
             let ang:Vec3 = new Vec3();
             ang = this.mesh.node.eulerAngles.add3f(0, detal, 0);
-            this.mesh.node.eulerAngles = ang;
+            if(this._canRotate)
+                this.mesh.node.eulerAngles = ang;
             
+
+            this.mainCamera.screenPointToRay(event.touch.getLocationX(), event.touch.getLocationY(), this._ray);
+
+            switch (this._raycastType) {
+                case ERaycastType.ALL:
+                    if (PhysicsSystem.instance.raycast(this._ray, this._mask, this._maxDistance)) {
+                        const r:PhysicsRayResult[] = PhysicsSystem.instance.raycastResults;
+
+                    }
+                    break;
+                case ERaycastType.CLOSEST:
+                    if (PhysicsSystem.instance.raycastClosest(this._ray, this._mask)) {
+                        const r:PhysicsRayResult = PhysicsSystem.instance.raycastClosestResult;
+                        console.log(`射线检测碰撞的点坐标${r.hitPoint}`);
+                        let mode:Mat4 = new Mat4();
+                        r.collider.node.getWorldMatrix(mode);
+
+                        // //视图矩阵
+                        // let viewMat = new Mat4();
+                        // let tempView:Mat4 = this.mainCamera.node.getWorldRT();
+                        // Mat4.invert(viewMat, tempView);
+                        // //投影矩阵
+                        // let pMat = new Mat4();
+                        // let fovy = Math.PI / 4;
+                        // let aspect = view.getViewportRect().width / view.getViewportRect().height
+                        // Mat4.perspective(pMat, fovy, aspect, 1, 1000)
+                        // //mvp矩阵
+                        // let mvpMat = new Mat4();
+                        // // Mat4.multiply(mvpMat, viewMat, mode);
+                        // Mat4.multiply(mvpMat, pMat, viewMat);
+
+                        // let hipPointTemp = new Vec4(r.hitPoint.x, r.hitPoint.y, r.hitPoint.z, 1);
+                        // Vec4.transformMat4(ppos, hipPointTemp, mvpMat);
+                        // ppos.divide4f(ppos.w, ppos.w, ppos.w, ppos.w);
+
+                        // ppos.multiplyScalar(0.5).add4f(0.5, 0.5, 0.5, 0.5);
+
+                        // console.log(`转化后的纹理坐标${ppos}`)
+                    
+                        // //映射到纹理坐标
+                        // let texX = Math.floor(1024 * ppos.x);
+                        // let texY = Math.floor(1024 * ppos.y);
+
+                        // console.log(texX, texY);
+
+                        /**遍历顶点 */
+                        let _mesh:Mesh = r.collider.node.getComponent(MeshRenderer).mesh;
+                        let vertices = _mesh.readAttribute(0, gfx.AttributeName.ATTR_POSITION);
+                        const mesh = utils.readMesh(_mesh, 0);
+                        this.posArr = [];
+                        // this.posArr = [];
+                        // for(let i = 0; i < mesh.positions.length; i = i + 3){
+                        //     let pos = new Vec3();
+                        //     Vec3.transformMat4(pos, v3(mesh.positions[i], mesh.positions[i + 1], mesh.positions[i + 2]), mode);
+                        //     let len = Vec3.distance(r.hitPoint, pos);
+                        //     if(len < this.r){
+                        //         let uvIdx = i / 3;
+                        //         pos.x = Math.floor(1024 * mesh.uvs[uvIdx * 2]);
+                        //         pos.y = Math.floor(1024 * mesh.uvs[uvIdx * 2 + 1]);
+                        //         this.posArr.push(pos);
+                        //     }
+                        // }
+
+                        /**找到最接近顶点 */
+                        let closeDis = 1000000;
+                        let closeP = new Vec3();
+                        for(let i = 0; i <  mesh.positions.length; i = i + 3){
+                            let pos = new Vec3();
+                            Vec3.transformMat4(pos, v3(mesh.positions[i], mesh.positions[i + 1], mesh.positions[i + 2]), mode);
+                            let len = Vec3.distance(r.hitPoint, pos);
+                            if(len < closeDis){
+                                closeDis = len;
+                                let uvIdx = i / 3;
+                                closeP.x = Math.floor(1024 * mesh.uvs[uvIdx * 2]);
+                                closeP.y = Math.floor(1024 * mesh.uvs[uvIdx * 2 + 1]);
+                                // closeP.x, closeP.y = this.posArr[i].x, this.posArr[i].y;
+                            }
+                        }
+                        this.posArr.push(closeP);
+
+                        this.drawPosArrAt(this.posArr);
+                        // this.pen.drawCircle(texX, texY);
+                    }    
+                    break;
+            }
         })
 
         input.on(Input.EventType.TOUCH_START, (event: EventTouch) => {
@@ -78,49 +165,77 @@ export class inputEvent extends Component {
                         let mode:Mat4 = new Mat4();
                         r.collider.node.getWorldMatrix(mode);
 
-                        //视图矩阵
-                        let viewMat = new Mat4();
-                        let tempView:Mat4 = this.mainCamera.node.getWorldRT();
-                        Mat4.invert(viewMat, tempView);
-                        //投影矩阵
-                        let pMat = new Mat4();
-                        let fovy = Math.PI / 4;
-                        let aspect = view.getViewportRect().width / view.getViewportRect().height
-                        Mat4.perspective(pMat, fovy, aspect, 1, 1000)
-                        //mvp矩阵
-                        let mvpMat = new Mat4();
-                        // Mat4.multiply(mvpMat, viewMat, mode);
-                        Mat4.multiply(mvpMat, pMat, viewMat);
+                        // //视图矩阵
+                        // let viewMat = new Mat4();
+                        // let tempView:Mat4 = this.mainCamera.node.getWorldRT();
+                        // Mat4.invert(viewMat, tempView);
+                        // //投影矩阵
+                        // let pMat = new Mat4();
+                        // let fovy = Math.PI / 4;
+                        // let aspect = view.getViewportRect().width / view.getViewportRect().height
+                        // Mat4.perspective(pMat, fovy, aspect, 1, 1000)
+                        // //mvp矩阵
+                        // let mvpMat = new Mat4();
+                        // // Mat4.multiply(mvpMat, viewMat, mode);
+                        // Mat4.multiply(mvpMat, pMat, viewMat);
 
-                        let hipPointTemp = new Vec4(r.hitPoint.x, r.hitPoint.y, r.hitPoint.z, 1);
-                        Vec4.transformMat4(ppos, hipPointTemp, mvpMat);
-                        ppos.divide4f(ppos.w, ppos.w, ppos.w, ppos.w);
+                        // let hipPointTemp = new Vec4(r.hitPoint.x, r.hitPoint.y, r.hitPoint.z, 1);
+                        // Vec4.transformMat4(ppos, hipPointTemp, mvpMat);
+                        // ppos.divide4f(ppos.w, ppos.w, ppos.w, ppos.w);
 
-                        ppos.multiplyScalar(0.5).add4f(0.5, 0.5, 0.5, 0.5);
+                        // ppos.multiplyScalar(0.5).add4f(0.5, 0.5, 0.5, 0.5);
 
-                        console.log(`转化后的纹理坐标${ppos}`)
+                        // console.log(`转化后的纹理坐标${ppos}`)
                     
-                        //映射到纹理坐标
-                        let texX = Math.floor(1024 * ppos.x);
-                        let texY = Math.floor(1024 * ppos.y);
+                        // //映射到纹理坐标
+                        // let texX = Math.floor(1024 * ppos.x);
+                        // let texY = Math.floor(1024 * ppos.y);
 
-                        console.log(texX, texY);
+                        // console.log(texX, texY);
 
                         /**遍历顶点 */
                         let _mesh:Mesh = r.collider.node.getComponent(MeshRenderer).mesh;
                         let vertices = _mesh.readAttribute(0, gfx.AttributeName.ATTR_POSITION);
                         const mesh = utils.readMesh(_mesh, 0);
                         this.posArr = [];
-                        for(let i = 0; i < mesh.positions.length; i = i + 3){
+                        // this.posArr = [];
+                        // for(let i = 0; i < mesh.positions.length; i = i + 3){
+                        //     let pos = new Vec3();
+                        //     Vec3.transformMat4(pos, v3(mesh.positions[i], mesh.positions[i + 1], mesh.positions[i + 2]), mode);
+                        //     let len = Vec3.distance(r.hitPoint, pos);
+                        //     if(len < this.r){
+                        //         let uvIdx = i / 3;
+                        //         pos.x = Math.floor(1024 * mesh.uvs[uvIdx * 2]);
+                        //         pos.y = Math.floor(1024 * mesh.uvs[uvIdx * 2 + 1]);
+                        //         this.posArr.push(pos);
+                        //     }
+                        // }
+
+                        /**找到最接近顶点 */
+                        let closeDis = 1000000;
+                        let closeP = new Vec3();
+                        for(let i = 0; i <  mesh.positions.length; i = i + 3){
                             let pos = new Vec3();
                             Vec3.transformMat4(pos, v3(mesh.positions[i], mesh.positions[i + 1], mesh.positions[i + 2]), mode);
-                            if(Vec3.distance(r.hitPoint, pos) < this.r){
+                            let len = Vec3.distance(r.hitPoint, pos);
+                            // closeDis = closeDis < 0 ? len : len < closeDis ? len : closeDis;
+                            // if(len < this.r){
+                            //     let uvIdx = i / 3;
+                            //     pos.x = Math.floor(1024 * mesh.uvs[uvIdx * 2]);
+                            // }
+                            // if(closeDis < 0){
+                            //     closeP.x, closeP.y = this.posArr[i].x, this.posArr[i].y;
+                            //     continue;
+                            // }
+                            if(len < closeDis){
+                                closeDis = len;
                                 let uvIdx = i / 3;
-                                pos.x = Math.floor(1024 * mesh.uvs[uvIdx * 2]);
-                                pos.y = Math.floor(1024 * mesh.uvs[uvIdx * 2 + 1]);
-                                this.posArr.push(pos);
+                                closeP.x = Math.floor(1024 * mesh.uvs[uvIdx * 2]);
+                                closeP.y = Math.floor(1024 * mesh.uvs[uvIdx * 2 + 1]);
+                                // closeP.x, closeP.y = this.posArr[i].x, this.posArr[i].y;
                             }
                         }
+                        this.posArr.push(closeP);
 
                         this.drawPosArrAt(this.posArr);
                         // this.pen.drawCircle(texX, texY);
@@ -128,6 +243,14 @@ export class inputEvent extends Component {
                     break;
             }
         });
+    }
+
+    canRotate(){
+        this._canRotate = true;
+    }
+
+    cantRotate(){
+        this._canRotate = false;
     }
 
     createBuffer() {
@@ -144,7 +267,7 @@ export class inputEvent extends Component {
         let dataView = new DataView(buf);
 
         for (let i = 0; i < 1024 * 1024; i++) {
-            dataView.setUint32(i * 4, 0xFFFFFF11, true);
+            dataView.setUint32(i * 4, 0xFFFFFFff, true);
         }
         
         this.tex = new Texture2D();
@@ -165,8 +288,30 @@ export class inputEvent extends Component {
         let pixelBuf:Uint8Array = this.readPixels()
         let dataView = new DataView(pixelBuf.buffer);
 
-        for(let i = 0; i < posArr.length; i ++){
-            dataView.setUint32(posArr[i].x * 4 + posArr[i].y * 1023 * 4, 0xff000000, true);
+        for(let z = 0; z < posArr.length; z ++){
+            console.log(`draw at ${posArr[z]}`);
+            // posArr[i].x = posArr[i].x == 0 ? 0 : posArr[i].x - 1;
+            // posArr[i].y = posArr[i].y == 0 ? 0 : posArr[i].y - 1;
+            // dataView.setUint32((posArr[z].x ) * 4 + (posArr[z].y ) * 1024 * 4, 0x00000000, true);
+            for(let i = 0; i <= 20; i ++){
+                for(let j = 0; j <= 20; j ++){
+                    if(posArr[z].x - i >=0 && posArr[z].y - j >= 0){
+                        dataView.setUint32((posArr[z].x-i) * 4 + (posArr[z].y-j)*1024*4, 0xff0000ff, true);
+                    }
+    
+                    if(posArr[z].x - i >= 0 && posArr[z].y + j < 1024){
+                        dataView.setUint32((posArr[z].x-i) * 4 + (posArr[z].y+j)*1024*4, 0xff0000ff, true);
+                    }
+    
+                    if(posArr[z].x + 1 >= 0 && posArr[z].y - j >= 0){
+                        dataView.setUint32((posArr[z].x+i) * 4 + (posArr[z].y-j)*1024*4, 0xff0000ff, true);
+                    } 
+    
+                    if(posArr[z].x + 1 >= 0 && posArr[z].y + j >= 0){
+                        dataView.setUint32((posArr[z].x+i) * 4 + (posArr[z].y+j)*1024*4, 0xff0000ff, true);
+                    } 
+                }
+            }
         }
         this.tex.uploadData(pixelBuf);
 
@@ -265,7 +410,17 @@ export class inputEvent extends Component {
     }
 
     update(deltaTime: number) {
-        // this.mainCamera?.camera?.geometryRenderer?.addSphere(this.node.worldPosition, 1, Color.GREEN, 20);
+        // let _mesh:Mesh = r.collider.node.getComponent(MeshRenderer).mesh;
+        // let vertices = _mesh.readAttribute(0, gfx.AttributeName.ATTR_POSITION);
+        const mesh = utils.readMesh(this.mesh.mesh, 0);
+        let posarr = [];
+        for(let i = 0; i < mesh.positions.length; i = i + 3){
+            let pos = new Vec3(mesh.positions[i], mesh.positions[i + 1], mesh.positions[i + 2]);
+            posarr.push(pos);
+            // Vec3.transformMat4(pos, v3(mesh.positions[i], mesh.positions[i + 1], mesh.positions[i + 2]), mode);
+        }
+        // this.mainCamera?.camera?.geometryRenderer?.addMesh(this.node.worldPosition, posarr, Color.GREEN);
+        // this.mainCamera?.camera?.geometryRenderer?.addCapsule(this.node.worldPosition, 0.5, 1, Color.GREEN);
     }
 }
 

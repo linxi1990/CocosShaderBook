@@ -1,0 +1,115 @@
+{
+  "ver": "2.3.12",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "fbb084cf-b357-4eff-b004-affae6c48d15",
+  "files": [],
+  "subMetas": {
+    "e4cf2": {
+      "importer": "gltf-mesh",
+      "uuid": "fbb084cf-b357-4eff-b004-affae6c48d15@e4cf2",
+      "displayName": "",
+      "id": "e4cf2",
+      "name": "Bathroom_Bathtub_Material0.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 248
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "935df": {
+      "importer": "gltf-material",
+      "uuid": "fbb084cf-b357-4eff-b004-affae6c48d15@935df",
+      "displayName": "",
+      "id": "935df",
+      "name": "White.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "862e8": {
+      "importer": "gltf-material",
+      "uuid": "fbb084cf-b357-4eff-b004-affae6c48d15@862e8",
+      "displayName": "",
+      "id": "862e8",
+      "name": "Grey.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "cc8a1": {
+      "importer": "gltf-scene",
+      "uuid": "fbb084cf-b357-4eff-b004-affae6c48d15@cc8a1",
+      "displayName": "",
+      "id": "cc8a1",
+      "name": "Bathroom_Bathtub.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
+    },
+    "redirect": "fbb084cf-b357-4eff-b004-affae6c48d15@cc8a1",
+    "assetFinder": {
+      "meshes": [
+        "fbb084cf-b357-4eff-b004-affae6c48d15@e4cf2"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "fbb084cf-b357-4eff-b004-affae6c48d15@935df",
+        "fbb084cf-b357-4eff-b004-affae6c48d15@862e8"
+      ],
+      "scenes": [
+        "fbb084cf-b357-4eff-b004-affae6c48d15@cc8a1"
+      ]
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
+  }
+}

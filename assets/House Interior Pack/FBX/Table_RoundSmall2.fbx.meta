@@ -1,0 +1,98 @@
+{
+  "ver": "2.3.12",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "2f90b4e7-4074-4a49-8f8d-7e628957b2d6",
+  "files": [],
+  "subMetas": {
+    "15191": {
+      "importer": "gltf-scene",
+      "uuid": "2f90b4e7-4074-4a49-8f8d-7e628957b2d6@15191",
+      "displayName": "",
+      "id": "15191",
+      "name": "Table_RoundSmall2.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "323cf": {
+      "importer": "gltf-mesh",
+      "uuid": "2f90b4e7-4074-4a49-8f8d-7e628957b2d6@323cf",
+      "displayName": "",
+      "id": "323cf",
+      "name": "Cylinder.016.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 744
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8c1ef": {
+      "importer": "gltf-material",
+      "uuid": "2f90b4e7-4074-4a49-8f8d-7e628957b2d6@8c1ef",
+      "displayName": "",
+      "id": "8c1ef",
+      "name": "Wood.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
+    },
+    "redirect": "2f90b4e7-4074-4a49-8f8d-7e628957b2d6@15191",
+    "assetFinder": {
+      "meshes": [
+        "2f90b4e7-4074-4a49-8f8d-7e628957b2d6@323cf"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "2f90b4e7-4074-4a49-8f8d-7e628957b2d6@8c1ef"
+      ],
+      "scenes": [
+        "2f90b4e7-4074-4a49-8f8d-7e628957b2d6@15191"
+      ]
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
+  }
+}

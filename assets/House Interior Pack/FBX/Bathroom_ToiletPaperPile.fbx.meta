@@ -1,0 +1,115 @@
+{
+  "ver": "2.3.12",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "a90982c2-237e-4e3d-af10-ab7bef87fac5",
+  "files": [],
+  "subMetas": {
+    "f0da6": {
+      "importer": "gltf-mesh",
+      "uuid": "a90982c2-237e-4e3d-af10-ab7bef87fac5@f0da6",
+      "displayName": "",
+      "id": "f0da6",
+      "name": "Bathroom_ToiletPaperPile_Material0.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 384
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "935df": {
+      "importer": "gltf-material",
+      "uuid": "a90982c2-237e-4e3d-af10-ab7bef87fac5@935df",
+      "displayName": "",
+      "id": "935df",
+      "name": "White.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1f97b": {
+      "importer": "gltf-material",
+      "uuid": "a90982c2-237e-4e3d-af10-ab7bef87fac5@1f97b",
+      "displayName": "",
+      "id": "1f97b",
+      "name": "Brown.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "5b920": {
+      "importer": "gltf-scene",
+      "uuid": "a90982c2-237e-4e3d-af10-ab7bef87fac5@5b920",
+      "displayName": "",
+      "id": "5b920",
+      "name": "Bathroom_ToiletPaperPile.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
+    },
+    "redirect": "a90982c2-237e-4e3d-af10-ab7bef87fac5@5b920",
+    "assetFinder": {
+      "meshes": [
+        "a90982c2-237e-4e3d-af10-ab7bef87fac5@f0da6"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "a90982c2-237e-4e3d-af10-ab7bef87fac5@935df",
+        "a90982c2-237e-4e3d-af10-ab7bef87fac5@1f97b"
+      ],
+      "scenes": [
+        "a90982c2-237e-4e3d-af10-ab7bef87fac5@5b920"
+      ]
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
+  }
+}

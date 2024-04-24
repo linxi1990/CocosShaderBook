@@ -1,0 +1,150 @@
+{
+  "ver": "2.3.12",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "20ee5f83-1954-48d0-bd99-ad338a85a263",
+  "files": [],
+  "subMetas": {
+    "a64ef": {
+      "importer": "gltf-mesh",
+      "uuid": "20ee5f83-1954-48d0-bd99-ad338a85a263@a64ef",
+      "displayName": "",
+      "id": "a64ef",
+      "name": "Axe_small.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 426
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "48b02": {
+      "importer": "gltf-embeded-image",
+      "uuid": "20ee5f83-1954-48d0-bd99-ad338a85a263@48b02",
+      "displayName": "",
+      "id": "48b02",
+      "name": "base_color_texture.image",
+      "userData": {
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": true,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "7d6ab": {
+      "importer": "texture",
+      "uuid": "20ee5f83-1954-48d0-bd99-ad338a85a263@7d6ab",
+      "displayName": "",
+      "id": "7d6ab",
+      "name": "base_color_texture.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/Free Simple Dungeon Props - YP/Material and Texture/Gradient.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "01e96": {
+      "importer": "gltf-material",
+      "uuid": "20ee5f83-1954-48d0-bd99-ad338a85a263@01e96",
+      "displayName": "",
+      "id": "01e96",
+      "name": "Gradient.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "2d67f": {
+      "importer": "gltf-scene",
+      "uuid": "20ee5f83-1954-48d0-bd99-ad338a85a263@2d67f",
+      "displayName": "",
+      "id": "2d67f",
+      "name": "Axe.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "base_color_texture",
+        "remap": "db://assets/Free Simple Dungeon Props - YP/Material and Texture/Gradient.png",
+        "uri": "20ee5f83-1954-48d0-bd99-ad338a85a263@48b02"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "redirect": "20ee5f83-1954-48d0-bd99-ad338a85a263@2d67f",
+    "assetFinder": {
+      "meshes": [
+        "20ee5f83-1954-48d0-bd99-ad338a85a263@a64ef"
+      ],
+      "skeletons": [],
+      "textures": [
+        "20ee5f83-1954-48d0-bd99-ad338a85a263@7d6ab"
+      ],
+      "materials": [
+        "20ee5f83-1954-48d0-bd99-ad338a85a263@01e96"
+      ],
+      "scenes": [
+        "20ee5f83-1954-48d0-bd99-ad338a85a263@2d67f"
+      ]
+    },
+    "fbx": {
+      "smartMaterialEnabled": false,
+      "matchMeshNames": false
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
+  }
+}
